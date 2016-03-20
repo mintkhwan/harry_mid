@@ -10,11 +10,11 @@ s {
   color: #9f9f9f;
 }
 .logo {
-  width: 530px;
+  width: 430px;
   height: 120px;
   //background: #1a444b;
   background-image: url("http://www.thekidsbookshop.com.au/skin/frontend/base/default/images/tkbs-logo-website.png");
-  background-size: 80%;
+  background-size: 100%;
   background-repeat: no-repeat;
   margin: auto;
 }
