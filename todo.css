@@ -13,8 +13,8 @@ s {
   width: 530px;
   height: 120px;
   //background: #1a444b;
-  background-image: url("http://i.imgur.com/N0S9HLi.png");
-  background-size: 100%;
+  background-image: url("http://www.thekidsbookshop.com.au/skin/frontend/base/default/images/tkbs-logo-website.png");
+  background-size: 80%;
   background-repeat: no-repeat;
   margin: auto;
 }
@@ -52,7 +52,7 @@ s {
   margin: 20px auto 15px;
   margin-bottom: 0px;
 }
-#img01 {
+/*#img01 {
   background-image: url("pic/h1.jpg");
 }
 #img02 {
@@ -75,7 +75,7 @@ s {
 }
 #img00 {
   background-image: url("pic/h0.jpg");
-}
+}*/
 .animate {
   transition: all 0.1s;
   -webkit-transition: all 0.1s;
