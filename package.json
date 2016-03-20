@@ -1,0 +1,14 @@
+{
+  "name": "harry",
+  "version": "0.0.0",
+  "description": "",
+  "main": "todo.js",
+  "scripts": {
+    "test": "standard todo.js && http-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "standard": "^6.0.8"
+  }
+}
