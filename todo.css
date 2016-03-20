@@ -37,7 +37,7 @@ s {
   position: relative;
   width: 960px;
   top: 120px;
-  margin: 40px auto;
+  //margin: 20px auto;
   //background: #ffffff;
 }
 
@@ -53,7 +53,7 @@ s {
 }
 
 .bookContainer:hover {
-  background: #06d2ff;
+  background: #ffc907;
   color: #515151;
 }
 
@@ -68,7 +68,7 @@ s {
 }
 
 .bookImage {
-  width: 113px;
+  width: 176px;
   height: 240px;
   //background: #1a444b;
   background-size: 100%;
@@ -76,28 +76,36 @@ s {
   margin: 20px auto 15px;
 }
 
+#img00 {
+  background-image: url("pic/h0.jpg");
+}
+
 #img01 {
   background-image: url("pic/h1.jpg");
 }
 
 #img02 {
-  background-image: url("http://i.imgur.com/WxD78Mf.png");
+  background-image: url("pic/h2.jpg");
 }
 
 #img03 {
-  background-image: url("http://i.imgur.com/W2Wix2z.png");
+  background-image: url("pic/h3.jpg");
 }
 
 #img04 {
-  background-image: url("http://i.imgur.com/ySbZBvL.png");
+  background-image: url("pic/h4.jpg");
 }
 
 #img05 {
-  background-image: url("http://i.imgur.com/uF8jWAa.png");
+  background-image: url("pic/h5.jpg");
 }
 
 #img06 {
-  background-image: url("http://i.imgur.com/lW0Bgah.png");
+  background-image: url("pic/h6.jpg");
+}
+
+#img07 {
+  background-image: url("pic/h7.jpg");
 }
 
 
