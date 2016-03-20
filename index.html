@@ -1,80 +1,57 @@
 <!doctype html>
 <html ng-app="todoApp">
-  <head>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>-->
-    <script src="angular-1.5.2/angular.min.js"></script>
-    <script src="todo.js"></script>
-    <link rel="stylesheet" href="todo.css">
-  </head>
-  <body>
-    <div ng-controller="TodoListController as todoList">
-      show {{todoList.title}}
+
+<head>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>-->
+  <script src="angular-1.5.2/angular.min.js"></script>
+  <script src="todo.js"></script>
+  <link rel="stylesheet" href="todo.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+
+<body ng-controller="TodoListController as todoList">
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="header">
+        <div class="logo"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <!--ส่วนหนังสือ -->
+      <!-- <h3>Catalog</h3> -->
+      <div ng-repeat="book in todoList.books">
+        <div class="col-md-3">
+          <div class="bookContainer">
+            <!--Book1-->
+            <img src="{{book.pic}}" class="bookImage">
+            <br/>
+            <b>{{book.name}}</b>
+            <br/> {{book.price | currency:"฿ "}}
+            <br/>
+            <input type="button" ng-click="addBookToCart(book)" class="action-button shadow animate blue" value="สั่งซื้อ" />
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="header">
-  <div class="logo"></div>
-</div>
-
-<div class="container">
-
-  <div class="bookContainer" id="book01">
-    <div class="bookImage" id="img01">&nbsp;</div>
-    <p class="bookTitle">
-      ศิลาอาถรรพ์<br/>
-      <a href="#">3160฿</a>
-    </p>
-
-    <input class="add-button" type="button" ng-click="addItemToCart(product)" value="สั่งซื้อ" />
+    <div class="col-xs-6 col-md-4">
+      <!--ส่วนรวมราคา-->
+      กรุณากดสั่งซื้อหนังสือที่คุณสนใจ...
+    </div>
   </div>
-
-  <div class="bookContainer" id="book02">
-    <div class="bookImage" id="img02">&nbsp;</div>
-    "Omega Mountain" <br/>
-    Gregory C. Thompson <br/>
-    <a href="#">6.99 $</a>
-  </div>
-
-  <div class="bookContainer" id="book03">
-    <div class="bookImage" id="img03">&nbsp;</div>
-    "You Don't Have To Put On" <br/>
-    Scott Martin <br/>
-    <a href="#">4.50 $</a>
-  </div>
-
-  <div class="bookContainer" id="book04">
-    <div class="bookImage" id="img04">&nbsp;</div>
-    "Hoxkit" <br/>
-    Abraham Russo <br/>
-    <a href="#">1.75 $</a>
-  </div>
-
-  <div class="bookContainer" id="book05">
-    <div class="bookImage" id="img05">&nbsp;</div>
-    "My First Boeing" <br/>
-    Jake Schoppfer <br/>
-    <a href="#">9.99 $</a>
-  </div>
-
-  <div class="bookContainer" id="book06">
-    <div class="bookImage" id="img06">&nbsp;</div>
-    "The Commisariat" <br/>
-    Ivan Sazanov <br/>
-    <a href="#">5.40 $</a>
-  </div>
-  <div class="bookContainer" id="book06">
-    <div class="bookImage" id="img06">&nbsp;</div>
-    "The Commisariat" <br/>
-    Ivan Sazanov <br/>
-    <a href="#">5.40 $</a>
-  </div>
-  <div class="bookContainer" id="book06">
-    <div class="bookImage" id="img06">&nbsp;</div>
-    "The Commisariat" <br/>
-    Ivan Sazanov <br/>
-    <a href="#">5.40 $</a>
-  </div>
-  OppenBooken
-</div>
-
-  </body>
+</body>
 </html
