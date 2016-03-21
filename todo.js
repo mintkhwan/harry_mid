@@ -47,9 +47,7 @@ angular.module('todoApp', [])
    ]
    todoList.cart = []
    todoList.addBookToCart = function (book) {
-     if (todoList.cart.length === 0) {
-       book.count = 1
-       todoList.cart.push(book)
-     }
+     console.log(book)
+     todoList.cart.push(book)
    }
  })
