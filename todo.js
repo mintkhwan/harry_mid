@@ -38,16 +38,32 @@ angular.module('todoApp', [])
        pic: 'pic/h7.jpg',
        name: 'แฮร์รี่ กับเครื่องรางยมทูต',
        price: 100.00
-     }, {
-       id: 8,
-       pic: 'pic/h0.jpg',
-       name: 'แฮร์รี่ Boxset(7 เล่ม)',
-       price: 3500.00
      }
+    //  }, {
+    //    id: 8,
+    //    pic: 'pic/h0.jpg',
+    //    name: 'แฮร์รี่ Boxset(7 เล่ม)',
+    //    price: 3500.00
+    //  }
    ]
    todoList.cart = []
    todoList.addBookToCart = function (book) {
-     console.log(book)
-     todoList.cart.push(book)
+     if (todoList.cart.length === 0) {
+       book.amount = 1
+       todoList.cart.push(book)
+     } else {
+       var checkAmount = false
+       for (var i = 0; i < todoList.cart.length; i++) {
+         if (todoList.cart[i].id === book.id) {
+           checkAmount = true
+           todoList.cart[i].amount += 1
+         }
+       }
+     }
+     if (checkAmount === false) {
+       book.amount = 1
+       todoList.cart.push(book)
+       console.log(book)
+     }
    }
  })

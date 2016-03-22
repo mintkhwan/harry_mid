@@ -20,8 +20,6 @@
 
 <body ng-controller="TodoListController as todoList">
 
-
-
   <div class="container-fluid">
     <div class="row">
       <div class="header">
@@ -51,6 +49,20 @@
     <div class="col-xs-6 col-md-4">
       <!--ส่วนรวมราคา-->
       กรุณากดสั่งซื้อหนังสือที่คุณสนใจ...
+        <table class="table table-bordered">
+          <tr>
+            <td>#</td>
+            <td>ชื่อหนังสือ</td>
+            <td>ราคา</td>
+            <td>จำนวน</td>
+          </tr>
+          <tr ng-repeat="show in todoList.cart">
+            <td>{{show.id}}</td>
+            <td>{{show.name}}</td>
+            <td>{{show.price}}</td>
+            <td>{{show.amount}}</td>
+          </tr>
+        </table>
     </div>
   </div>
 </body>
