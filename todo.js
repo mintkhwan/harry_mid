@@ -4,10 +4,15 @@ angular.module('todoApp', [])
     var todoList = this
     todoList.mint = 'mint'
     todoList.store = []
+    todoList.sell = []
+    todoList.promo = []
+    todoList.discount = 0
     todoList.addBook = function (ep, name, price) {
       if (checkStore(todoList.store, ep)) { // ถ้าใน store มี ep ซ้ำจะบวกค่าจำนวนหนังสือแต่ละ ep
         var index = addAmount(todoList.store, ep)
-        todoList.store[index].amount += 1 // จะ +1 ไป
+        // var index_order = addAmount(todoList.order, ep)
+        todoList.store[index].amount += 1 // จะ +1
+        // todoList.order[index_order].amount += 1
       } else { // จะ push ค่าที่ไม่ซ้ำเก็บเอาไว้
         var dataBook = {
           ep: ep,
@@ -17,7 +22,50 @@ angular.module('todoApp', [])
         }
         todoList.store.push(dataBook)
       }
-      console.log(todoList.store)
+      // todoList.order = todoList.store
+      // todoList.sell = todoList.store
+      todoList.store.sort(function (a, b) { // เรียงค่ามาก > น้อย
+        if (a.amount > b.amount) return -1
+        if (a.amount < b.amount) return 1
+        return 0
+      })
+      var amount = []
+      for (var i = 0; i < todoList.store.length; i++) {
+        if (typeof todoList.store[i].amount !== 'undefined') { // ถ้า amount ก็จะไม่เอาค่า
+          amount.push(todoList.store[i].amount)
+        }
+      }
+      todoList.promo = amount
+      console.log(amount)
+    }
+    todoList.cal = function () {
+      var countbook = 0 // ตัวนับจน.หนังสือ
+      todoList.discount = 0 // ส่วนลด
+      for (var i = 0; i <= todoList.promo.length; i++) { // วน col [A,B,C]
+        for (var j = 0; j < todoList.promo.length; j++) { // วน row [A,B,C] เพื่อเก็บ count ไว้ check
+          if (todoList.promo[j] > 0) {
+            countbook++
+          }
+          // console.log('c' + countbook)
+        }
+        if (countbook === 2) { // คิดส่วนลด
+          todoList.discount += 20
+          // console.log('todoList.discount20')
+        } else if (countbook === 3) {
+          todoList.discount += 60
+        } else if (countbook === 4) {
+          todoList.discount += 120
+        } else if (countbook === 5) {
+          todoList.discount += 200
+        } else if (countbook === 6) {
+          todoList.discount += 300
+        }
+        for (var k = 0; k < todoList.promo.length; k++) {
+          todoList.promo[k] -= 1
+        }
+        countbook = 0
+        console.log('todoList.discount ' + todoList.discount)
+      }
     }
     var checkStore = function (store, ep) { // จะเช็คค่าใน arr store ว่ามีหนังซื้อไหม
       for (var i = 0; i < store.length; i++) { // ใน store มีกี่ ep ที่ซ้ำกัน

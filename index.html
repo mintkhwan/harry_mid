@@ -24,7 +24,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-8">
       <!--ส่วนหนังสือ -->
-    <br>{{todoList.mint}}
+      <!-- {{todoList.mint}} -->
       <button type="button" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)">1</button>
       <button type="button" ng-click="todoList.addBook(2, 'แฮร์รี่กับห้องแห่งความลับ', 100.00)">2</button>
       <button type="button" ng-click="todoList.addBook(3, 'แฮร์รี่กับนักโทษแห่งอัซคาบัน', 100.00)">3</button>
@@ -32,13 +32,15 @@
       <button type="button" ng-click="todoList.addBook(5, 'แฮร์รี่กับภาคีนกฟีนิกซ์', 100.00)">5</button>
       <button type="button" ng-click="todoList.addBook(6, 'แฮร์รี่กับเจ้าชายเลือดผสม', 100.00)">6</button>
       <button type="button" ng-click="todoList.addBook(7, 'แฮร์รี่กับเครื่องรางยมทูต', 100.00)">7</button>
+      <button type="button" ng-click="todoList.cal()">cal</button>
     </div>
 
     <div class="col-xs-6 col-md-4">
       <!--ส่วนรวมราคา-->
       <div ng-repeat="show in todoList.store">
-          {{show.name}} | {{show.price}}฿ | จน.{{show.amount}}
+          {{show.name}} | จน.{{show.amount}}เล่ม | ราคา {{show.price*show.amount}}฿
         </div>
+        ส่วนลด : {{todoList.discount}}
     </div>
   </div>
 </body>
