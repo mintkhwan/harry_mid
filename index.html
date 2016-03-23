@@ -40,7 +40,10 @@
       <div ng-repeat="show in todoList.store">
           {{show.name}} | จน.{{show.amount}}เล่ม | ราคา {{show.price*show.amount}}฿
         </div>
-        ส่วนลด : {{todoList.discount}}
+        จน.เงินที่รวมทั้งหมด {{todoList.bill() * 100}}
+        ส่วนลด : {{todoList.discount}}<br>
+        จน.เงินที่ต้องจ่าย {{(todoList.bill() * 100) - todoList.discount}}
+
     </div>
   </div>
 </body>
