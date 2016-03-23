@@ -39,12 +39,6 @@ angular.module('todoApp', [])
         name: 'แฮร์รี่ กับเครื่องรางยมทูต',
         price: 100.00
       }
-    //  }, {
-    //    id: 8,
-    //    pic: 'pic/h0.jpg',
-    //    name: 'แฮร์รี่ Boxset(7 เล่ม)',
-    //    price: 3500.00
-    //  }
     ]
     todoList.cart = []
 
