@@ -5,63 +5,36 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   <script src="todo.js"></script>
   <link rel="stylesheet" href="todo.css">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-  <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 
 <body ng-controller="TodoListController as todoList">
 
   <div class="container-fluid">
+
     <div class="row">
       <div class="header">
         <div class="logo"></div>
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-xs-12 col-md-8">
       <!--ส่วนหนังสือ -->
-      <!-- <h3>Catalog</h3> -->
-      <div ng-repeat="book in todoList.books">
-        <div class="col-md-3">
-          <div class="bookContainer">
-            <!--Book1-->
-            <img src="{{book.pic}}" class="bookImage">
-            <br/>
-            <b>{{book.name}}</b>
-            <br/>{{book.price | currency:"฿ "}}
-            <br/>
-            <input type="button" ng-click="todoList.addBookToCart(book)" class="action-button shadow animate blue" value="สั่งซื้อ" />
-          </div>
-        </div>
-      </div>
+      <button type="button" ng-click="todoList.addBook(1, 'book1', 100.00)">1</button>
+      <button type="button" ng-click="todoList.addBook(2, 'book2', 100.00)">2</button>
+      <button type="button" ng-click="todoList.addBook(3, 'book3', 100.00)">3</button>
+      <button type="button" ng-click="todoList.addBook(4, 'book4', 100.00)">4</button>
+      <button type="button" ng-click="todoList.addBook(5, 'book5', 100.00)">5</button>
+      <button type="button" ng-click="todoList.addBook(6, 'book6', 100.00)">6</button>
+      <button type="button" ng-click="todoList.addBook(7, 'book7', 100.00)">7</button>
     </div>
 
     <div class="col-xs-6 col-md-4">
       <!--ส่วนรวมราคา-->
-      กรุณากดสั่งซื้อหนังสือที่คุณสนใจ...
-      <table class="table table-bordered">
-        <tr>
-          <td>#</td>
-          <td>ชื่อหนังสือ</td>
-          <td>ราคา</td>
-          <td>จำนวน</td>
-        </tr>
-        <tr ng-repeat="show in todoList.cart">
-          <td>{{show.id}}</td>
-          <td>{{show.name}}</td>
-          <td>{{show.price}}</td>
-          <td>{{show.amount}}</td>
-        </tr>
-      </table>
     </div>
   </div>
 </body>
