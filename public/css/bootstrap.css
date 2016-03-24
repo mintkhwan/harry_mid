@@ -177,6 +177,7 @@ optgroup {
   font-weight: bold;
 }
 table {
+  border-color: : #d0d0d0;
   border-spacing: 0;
   border-collapse: collapse;
 
@@ -1410,6 +1411,7 @@ th {
 }
 .table {
   width: 100%;
+  margin-bottom: 20px;
   margin-bottom: 15px;
   font-size: 80%;
 }

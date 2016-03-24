@@ -102,7 +102,20 @@ angular.module('todoApp', [])
         }
       }
     }
-    todoList.delBook = function () {
-      console.log('yes')
+    todoList.delBook = function (data) {
+      var index = todoList.promo.indexOf(data)
+      // console.log('ช่องที่เราต้องการจะลบ' + index)
+      todoList.promo.splice(index, 1)
+      todoList.show.splice(index, 1)
+      todoList.store.splice(index, 1)
+      var amount = []
+      for (var i = 0; i < todoList.store.length; i++) {
+        if (typeof todoList.store[i].amount !== 'undefined') {
+          amount.push(todoList.store[i].amount)
+        }
+      }
+      todoList.promo = amount
+      // console.log('เรียงใหม่เเล้วได้ :' + todoList.promo)
+      cal(todoList.promo)
     }
   })
