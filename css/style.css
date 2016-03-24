@@ -487,7 +487,8 @@ h2.m_3 {
   padding: 5em 0;
 }
 .row_3 img {
-  border: 1px solid #E4E0E0;
+  border: 0px solid #E4E0E0;
+  margin-right: 10px;
 }
 .row_5 {
   padding: 4% 28% 0 5%;

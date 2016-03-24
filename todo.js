@@ -2,12 +2,14 @@
 angular.module('todoApp', [])
   .controller('TodoListController', function () {
     var todoList = this
-    todoList.mint = 'Promotion'
+    todoList.mint = 'Select Book'
     todoList.store = []
     todoList.promo = []
     todoList.discount = 0
     todoList.page = false
+    todoList.show = []
     todoList.addBook = function (ep, name, price) {
+      todoList.page = true
       if (checkStore(todoList.store, ep)) { // ถ้าใน store มี ep ซ้ำจะบวกค่าจำนวนหนังสือแต่ละ ep
         var index = addAmount(todoList.store, ep)
         todoList.store[index].amount += 1 // จะ +1
@@ -19,6 +21,18 @@ angular.module('todoApp', [])
           amount: 1
         }
         todoList.store.push(dataBook)
+      }
+      if (checkStore(todoList.show, ep)) { // ถ้าใน store มี ep ซ้ำจะบวกค่าจำนวนหนังสือแต่ละ ep
+        var index_show = addAmount(todoList.show, ep)
+        todoList.show[index_show].amount += 1 // จะ +1
+      } else { // จะ push ค่าที่ไม่ซ้ำเก็บเอาไว้
+        var data_show = {
+          ep: ep,
+          name: name,
+          price: price,
+          amount: 1
+        }
+        todoList.show.push(data_show)
       }
       todoList.store.sort(function (a, b) { // เรียงค่ามาก > น้อย
         if (a.amount > b.amount) return -1
