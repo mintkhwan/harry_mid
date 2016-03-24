@@ -16,7 +16,7 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-		<link href="todo.css" rel='stylesheet' type='text/css' />
+	<link href="todo.css" rel='stylesheet' type='text/css' />
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<!-- Custom Theme files -->
@@ -180,16 +180,18 @@
 							<div class="table-responsive">
 								<table class="table">
 									<tr>
-										<th class="absorbing-column">Book Name</td>
-										<th class="absorbing-column">Amount(เล่ม)</td>
-										<th class="absorbing-column">Price(฿)</td>
-										<th class="absorbing-column">#</td>
+										<th class="absorbing-column">Book Name</th>
+										<th class="absorbing-column">Amount(เล่ม)</th>
+										<th class="absorbing-column">Price(฿)</th>
+										<th class="absorbing-column">#</th>
 									</tr>
 									<tr ng-repeat="show in todoList.show">
 										<td class="absorbing-column">{{show.name}}</td>
 										<td class="absorbing-column" align="right">{{show.amount}}</td>
 										<td class="absorbing-column" align="right">{{show.price*show.amount}}</td>
-										<td class="absorbing-column" align="right"><div class="mint">✘</div></td>
+										<td class="absorbing-column" align="right">
+											<div class="mint">✘</div>
+										</td>
 									</tr>
 								</table>
 							</div>

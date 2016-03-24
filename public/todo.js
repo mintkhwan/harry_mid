@@ -77,6 +77,8 @@ angular.module('todoApp', [])
           todoList.discount += 200
         } else if (countbook === 6) {
           todoList.discount += 300
+        } else if (countbook === 7) {
+          todoList.discount += 420
         }
         for (var k = 0; k < todoList.promo.length; k++) {
           todoList.promo[k] -= 1
