@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-	<script src="todo.js"></script>
+	<script src="js/todo.js"></script>
 	<script type="application/x-javascript">
 		addEventListener("load", function() {
 			setTimeout(hideURLbar, 0);
@@ -16,7 +16,7 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<link href="todo.css" rel='stylesheet' type='text/css' />
+	<link href="css/todo.css" rel='stylesheet' type='text/css' />
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<!-- Custom Theme files -->
@@ -181,24 +181,25 @@
 								<table class="table">
 									<tr>
 										<th class="absorbing-column">Book Name</th>
-										<th class="absorbing-column">Amount(เล่ม)</th>
+										<th class="absorbing-column">Amount</th>
 										<th class="absorbing-column">Price(฿)</th>
-										<th class="absorbing-column">#</th>
+										<th class="absorbing-column">Delete</th>
 									</tr>
 									<tr ng-repeat="show in todoList.show">
 										<td class="absorbing-column">{{show.name}}</td>
 										<td class="absorbing-column" align="right">{{show.amount}}</td>
 										<td class="absorbing-column" align="right">{{show.price*show.amount}}</td>
-										<td class="absorbing-column" align="right">
-											<div class="mint">✘</div>
-										</td>
+										<td class="absorbing-column" align="center">✘</td>
 									</tr>
 								</table>
 							</div>
-							Total Price : {{todoList.bill() * 100}}
-							<br>Discount : {{todoList.discount}}
+							<div class="total">
+								<!-- <div class="mint">✗ | ✔ </div> -->
+							</div>
+							<div align="right" class="mint2">Price = {{todoList.bill() * 100}}</div>
+							<div align="right" class="mint2">Discount : {{todoList.discount}}</div>
 							<br>
-							<br>Pay Price : {{(todoList.bill() * 100) - todoList.discount}}
+							<div align="right" class="mint4"><b><u>Total : {{(todoList.bill() * 100) - todoList.discount}}</u></b></div>
 						</div>
 						<div ng-show="todoList.page!==true">
 							กรุณากด&nbsp;&nbsp;&nbsp;<img src="images/plus.png" width="15" />เพื่อเพิ่มหนังสือที่คุณต้องการซื้อค่ะ
