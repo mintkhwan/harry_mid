@@ -34,11 +34,11 @@ angular.module('todoApp', [])
         }
         todoList.show.push(data_show)
       }
-      todoList.store.sort(function (a, b) { // เรียงค่ามาก > น้อย
-        if (a.amount > b.amount) return -1
-        if (a.amount < b.amount) return 1
-        return 0
-      })
+      // todoList.store.sort(function (a, b) { // เรียงค่ามาก > น้อย
+      //   if (a.amount > b.amount) return -1
+      //   if (a.amount < b.amount) return 1
+      //   return 0
+      // })
       var amount = []
       for (var i = 0; i < todoList.store.length; i++) {
         if (typeof todoList.store[i].amount !== 'undefined') { // ถ้า amount ก็จะไม่เอาค่า
@@ -102,8 +102,8 @@ angular.module('todoApp', [])
         }
       }
     }
-    todoList.delBook = function (data) {
-      var index = todoList.promo.indexOf(data)
+    todoList.delBook = function (data, index) {
+      // var index = todoList.promo.indexOf(data)
       // console.log('ช่องที่เราต้องการจะลบ' + index)
       todoList.promo.splice(index, 1)
       todoList.show.splice(index, 1)
