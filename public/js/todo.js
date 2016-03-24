@@ -102,4 +102,7 @@ angular.module('todoApp', [])
         }
       }
     }
+    todoList.delBook = function () {
+      console.log('yes')
+    }
   })
