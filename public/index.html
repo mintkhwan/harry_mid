@@ -18,6 +18,7 @@
 	</script>
 	<link href="css/todo.css" rel='stylesheet' type='text/css' />
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<!-- Custom Theme files -->
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -157,17 +158,6 @@
 									<span class="amount item_price">฿100.00</span>
 								</div>
 							</div>
-							<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
-								<div class="shop-holder">
-									<div class="product-img">
-										<img width="225" height="265" src="images/h1.jpg" class="img-responsive" alt="item4">
-										<a href="" class="button item_add" ng-click="todoList.cal()"></a>
-									</div>
-								</div>
-								<div class="shop-content" style="height: 80px;">
-									<h4>คำนวณ</h4>
-								</div>
-							</div>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -189,16 +179,21 @@
 										<td class="absorbing-column">{{show.name}}</td>
 										<td class="absorbing-column" align="right">{{show.amount}}</td>
 										<td class="absorbing-column" align="right">{{show.price*show.amount}}</td>
-										<td class="absorbing-column" align="center">✘</td>
+										<td class="absorbing-column" align="center">
+											<div class="remove">
+												<div class="center">
+													<i class="fa fa-times-circle"></i>
+												</div>
+											</div>
+										</td>
 									</tr>
 								</table>
 							</div>
 							<div class="total">
 								<!-- <div class="mint">✗ | ✔ </div> -->
 							</div>
-							<div align="right" class="mint2">Price = {{todoList.bill() * 100}}</div>
+							<div align="right" class="mint2">Price : {{todoList.bill() * 100}}</div>
 							<div align="right" class="mint2">Discount : {{todoList.discount}}</div>
-							<br>
 							<div align="right" class="mint4"><b><u>Total : {{(todoList.bill() * 100) - todoList.discount}}</u></b></div>
 						</div>
 						<div ng-show="todoList.page!==true">

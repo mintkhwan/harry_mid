@@ -46,6 +46,7 @@ angular.module('todoApp', [])
         }
       }
       todoList.promo = amount
+      cal(todoList.promo)
     }
     todoList.bill = function () {
       var total = 0
@@ -54,13 +55,13 @@ angular.module('todoApp', [])
       }
       return total
     }
-    todoList.cal = function () {
+    function cal (data) {
       var countbook = 0 // ตัวนับจน.หนังสือ
       todoList.discount = 0 // ส่วนลด
       var max
-      for (var i = 0; i <= todoList.promo.length; i++) { // วน col [A,B,C]
-        for (var j = 0; j < todoList.promo.length; j++) { // วน row [A,B,C] เพื่อเก็บ count ไว้ check
-          if (todoList.promo[j] > 0) {
+      for (var i = 0; i <= data.length; i++) { // วน col [A,B,C]
+        for (var j = 0; j < data.length; j++) { // วน row [A,B,C] เพื่อเก็บ count ไว้ check
+          if (data[j] > 0) {
             countbook++
             if (max < countbook) {
               max = countbook
@@ -80,8 +81,8 @@ angular.module('todoApp', [])
         } else if (countbook === 7) {
           todoList.discount += 420
         }
-        for (var k = 0; k < todoList.promo.length; k++) {
-          todoList.promo[k] -= 1
+        for (var k = 0; k < data.length; k++) {
+          data[k] -= 1
         }
         countbook = 0
       }
