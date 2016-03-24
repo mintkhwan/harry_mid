@@ -2,10 +2,11 @@
 angular.module('todoApp', [])
   .controller('TodoListController', function () {
     var todoList = this
-    todoList.mint = 'mint'
+    todoList.mint = 'Promotion'
     todoList.store = []
     todoList.promo = []
     todoList.discount = 0
+    todoList.page = false
     todoList.addBook = function (ep, name, price) {
       if (checkStore(todoList.store, ep)) { // ถ้าใน store มี ep ซ้ำจะบวกค่าจำนวนหนังสือแต่ละ ep
         var index = addAmount(todoList.store, ep)

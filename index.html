@@ -2,49 +2,202 @@
 <html ng-app="todoApp">
 
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-  <script src="todo.js"></script>
-  <link rel="stylesheet" href="todo.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<title>BanNaijin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="todo.js"></script>
+	<script type="application/x-javascript">
+		addEventListener("load", function() {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!-- Custom Theme files -->
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<script src="js/simpleCart.min.js">	</script>
+
+	<!-- Custom Theme files -->
+	<!--webfont-->
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<!-- start menu -->
+	<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript" src="js/megamenu.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".megamenu").megamenu();
+		});
+	</script>
 </head>
 
 <body ng-controller="TodoListController as todoList">
-
-  <div class="container-fluid">
-
-    <div class="row">
-      <div class="header">
-        <div class="logo"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-md-8">
-      <!--ส่วนหนังสือ -->
-      <!-- {{todoList.mint}} -->
-      <button type="button" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)">1</button>
-      <button type="button" ng-click="todoList.addBook(2, 'แฮร์รี่กับห้องแห่งความลับ', 100.00)">2</button>
-      <button type="button" ng-click="todoList.addBook(3, 'แฮร์รี่กับนักโทษแห่งอัซคาบัน', 100.00)">3</button>
-      <button type="button" ng-click="todoList.addBook(4, 'แฮร์รี่กับถ้วยอัคนี', 100.00)">4</button>
-      <button type="button" ng-click="todoList.addBook(5, 'แฮร์รี่กับภาคีนกฟีนิกซ์', 100.00)">5</button>
-      <button type="button" ng-click="todoList.addBook(6, 'แฮร์รี่กับเจ้าชายเลือดผสม', 100.00)">6</button>
-      <button type="button" ng-click="todoList.addBook(7, 'แฮร์รี่กับเครื่องรางยมทูต', 100.00)">7</button>
-      <button type="button" ng-click="todoList.cal()">cal</button>
-    </div>
-
-    <div class="col-xs-6 col-md-4">
-      <!--ส่วนรวมราคา-->
-      <div ng-repeat="show in todoList.store">
-          {{show.name}} | จน.{{show.amount}}เล่ม | ราคา {{show.price*show.amount}}฿
-        </div>
-        จน.เงินที่รวมทั้งหมด {{todoList.bill() * 100}}
-        ส่วนลด : {{todoList.discount}}<br>
-        จน.เงินที่ต้องจ่าย {{(todoList.bill() * 100) - todoList.discount}}
-
-    </div>
-  </div>
+	<div class="wrap-box"></div>
+	<div class="header_bottom">
+		<div class="container">
+			<div class="col-xs-8 header-bottom-left">
+				<div class="col-xs-2 logo">
+					<h1><a href="index.html"><span>BanNaijin</span>BookStore</a>&nbsp;&nbsp;&nbsp;►&nbsp;Harry&nbsp;Potter</h1>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="content_top">
+		<div class="container">
+			<div class="box_1">
+				<div class="col-md-7">
+					<div class="section group">
+						<div class="row">
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<div class="shop-holder">
+								<div class="product-img">
+										<img width="225" height="265" src="images/h1.jpg" class="img-responsive" alt="item4">
+									<a href="" class="button item_add" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)"></a>
+								</div>
+							</div>
+							<div class="shop-content" style="height: 80px;">
+								<div><h5>เล่มที่ 1</h5></div>
+								<h4>แฮร์รี่กับศิลาอาถรรพ์</h4>
+								<span class="amount item_price">฿100.00</span>
+							</div>
+						</div>
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<div class="shop-holder">
+								<div class="product-img">
+										<img width="225" height="265" src="images/h2.jpg" class="img-responsive" alt="item4">
+									<a href="" class="button item_add" ng-click="todoList.addBook(2, 'แฮร์รี่กับห้องแห่งความลับ', 100.00)"></a>
+								</div>
+							</div>
+							<div class="shop-content" style="height: 80px;">
+								<div><h5>เล่มที่ 2</h5></div>
+								<h4>แฮร์รี่กับห้องแห่งความลับ</h4>
+								<span class="amount item_price">฿100.00</span>
+							</div>
+						</div>
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<div class="shop-holder">
+								<div class="product-img">
+										<img width="225" height="265" src="images/h3.jpg" class="img-responsive" alt="item4">
+									<a href="" class="button item_add" ng-click="todoList.addBook(3, 'แฮร์รี่กับนักโทษแห่งอัซคาบัน', 100.00)"></a>
+								</div>
+							</div>
+							<div class="shop-content" style="height: 80px;">
+								<div><h5>เล่มที่ 3</h5></div>
+								<h4>แฮร์รี่กับนักโทษแห่งอัซคาบัน</h4>
+								<span class="amount item_price">฿100.00</span>
+							</div>
+						</div>
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<div class="shop-holder">
+								<div class="product-img">
+										<img width="225" height="265" src="images/h4.jpg" class="img-responsive" alt="item4">
+									<a href="" class="button item_add" ng-click="todoList.addBook(4, 'แฮร์รี่กับถ้วยอัคนี', 100.00)"></a>
+								</div>
+							</div>
+							<div class="shop-content" style="height: 80px;">
+								<div><h5>เล่มที่ 4</h5></div>
+								<h4>แฮร์รี่กับถ้วยอัคนี</h4>
+								<span class="amount item_price">฿100.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<div class="shop-holder">
+								<div class="product-img">
+										<img width="225" height="265" src="images/h5.jpg" class="img-responsive" alt="item4">
+									<a href="" class="button item_add" ng-click="todoList.addBook(5, 'แฮร์รี่กับภาคีนกฟีนิกซ์', 100.00)"></a>
+								</div>
+							</div>
+							<div class="shop-content" style="height: 80px;">
+								<div><h5>เล่มที่ 5</h5></div>
+								<h4>แฮร์รี่กับภาคีนกฟีนิกซ์</h4>
+								<span class="amount item_price">฿100.00</span>
+							</div>
+						</div>
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<div class="shop-holder">
+								<div class="product-img">
+										<img width="225" height="265" src="images/h6.jpg" class="img-responsive" alt="item4">
+									<a href="" class="button item_add" ng-click="todoList.addBook(6, 'แฮร์รี่กับเจ้าชายเลือดผสม', 100.00)"></a>
+								</div>
+							</div>
+							<div class="shop-content" style="height: 80px;">
+								<div><h5>เล่มที่ 6</h5></div>
+								<h4>แฮร์รี่กับเจ้าชายเลือดผสม</h4>
+								<span class="amount item_price">฿100.00</span>
+							</div>
+						</div>
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<div class="shop-holder">
+								<div class="product-img">
+										<img width="225" height="265" src="images/h7.jpg" class="img-responsive" alt="item4">
+									<a href="" class="button item_add" ng-click="todoList.addBook(7, 'แฮร์รี่กับเครื่องรางยมทูต', 100.00)"></a>
+								</div>
+							</div>
+							<div class="shop-content" style="height: 80px;">
+								<div><h5>เล่มที่ 7</h5></div>
+								<h4>แฮร์รี่กับเครื่องรางยมทูต</h4>
+								<span class="amount item_price">฿100.00</span>
+							</div>
+						</div>
+						<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem">
+							<div class="shop-holder">
+								<div class="product-img">
+										<img width="225" height="265" src="images/h1.jpg" class="img-responsive" alt="item4">
+									<a href="" class="button item_add" ng-click="todoList.cal()"></a>
+								</div>
+							</div>
+							<div class="shop-content" style="height: 80px;">
+								<h4>คำนวณ</h4>
+							</div>
+						</div>
+					</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="col-md-5 row_3">
+					<div class="about-block-content">
+						<div class="border-add"></div>
+						<h4>{{todoList.mint}}</h4>
+								<div class="table-responsive">
+								  <table class="table">
+								    <tr>
+								    	<th class="absorbing-column">Book Name</td>
+											<th class="absorbing-column">Amount(เล่ม)</td>
+											<th class="absorbing-column">Price(฿)</td>
+								    </tr>
+										<tr ng-repeat="show in todoList.store">
+											<td class="absorbing-column">{{show.name}}</td>
+											<td class="absorbing-column" align="right">{{show.amount}}</td>
+											<td class="absorbing-column" align="right">{{show.price*show.amount}}</td>
+										</tr>
+								  </table>
+								</div>
+				      Total Price : {{todoList.bill() * 100}}
+							<br>Discount : {{todoList.discount}}
+				      <br><br>Pay Price : {{(todoList.bill() * 100) - todoList.discount}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container">
+			<div class="footer_bottom">
+				<div class="copy">
+					<p>Copyright © 2015 Buy_shop. All Rights Reserved.<a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
-</html
+
+</html>
