@@ -34,11 +34,6 @@ angular.module('todoApp', [])
         }
         todoList.show.push(data_show)
       }
-      // todoList.store.sort(function (a, b) { // เรียงค่ามาก > น้อย
-      //   if (a.amount > b.amount) return -1
-      //   if (a.amount < b.amount) return 1
-      //   return 0
-      // })
       var amount = []
       for (var i = 0; i < todoList.store.length; i++) {
         if (typeof todoList.store[i].amount !== 'undefined') { // ถ้า amount ก็จะไม่เอาค่า
@@ -108,6 +103,9 @@ angular.module('todoApp', [])
       todoList.promo.splice(index, 1)
       todoList.show.splice(index, 1)
       todoList.store.splice(index, 1)
+      if (todoList.show.length === 0) {
+        todoList.page = false
+      }
       var amount = []
       for (var i = 0; i < todoList.store.length; i++) {
         if (typeof todoList.store[i].amount !== 'undefined') {
@@ -116,6 +114,88 @@ angular.module('todoApp', [])
       }
       todoList.promo = amount
       // console.log('เรียงใหม่เเล้วได้ :' + todoList.promo)
+      cal(todoList.promo)
+    }
+    todoList.subbutton = function (show, $index) {
+      // console.log('sub')
+      subRepeat(show.ep, show.name, show.price)
+    }
+    function subRepeat (ep, name, price) {
+      todoList.page = true
+      if (checkStore(todoList.store, ep)) { // ถ้าใน store มี ep ซ้ำจะบวกค่าจำนวนหนังสือแต่ละ ep
+        var index = addAmount(todoList.store, ep)
+        if (todoList.store[index].amount !== 0) {
+          todoList.store[index].amount -= 1 // จะ +1
+        }
+      } else { // จะ push ค่าที่ไม่ซ้ำเก็บเอาไว้
+        var dataBook = {
+          ep: ep,
+          name: name,
+          price: price,
+          amount: 1
+        }
+        todoList.store.push(dataBook)
+      }
+      if (checkStore(todoList.show, ep)) { // ถ้าใน store มี ep ซ้ำจะบวกค่าจำนวนหนังสือแต่ละ ep
+        var index_show = addAmount(todoList.show, ep)
+        // todoList.show[index_show].amount += 1 // จะ +1
+        if (todoList.show[index_show].amount !== 0) {
+          todoList.show[index_show].amount -= 1
+        }
+      } else { // จะ push ค่าที่ไม่ซ้ำเก็บเอาไว้
+        var data_show = {
+          ep: ep,
+          name: name,
+          price: price,
+          amount: 1
+        }
+        todoList.show.push(data_show)
+      }
+      var amount = []
+      for (var i = 0; i < todoList.store.length; i++) {
+        if (typeof todoList.store[i].amount !== 'undefined') { // ถ้า amount ก็จะไม่เอาค่า
+          amount.push(todoList.store[i].amount)
+        }
+      }
+      todoList.promo = amount
+      cal(todoList.promo)
+    }
+    todoList.addbutton = function (show, $index) {
+      addRepeat(show.ep, show.name, show.price)
+    }
+    function addRepeat (ep, name, price) {
+      todoList.page = true
+      if (checkStore(todoList.store, ep)) { // ถ้าใน store มี ep ซ้ำจะบวกค่าจำนวนหนังสือแต่ละ ep
+        var index = addAmount(todoList.store, ep)
+        todoList.store[index].amount += 1 // จะ +1
+      } else { // จะ push ค่าที่ไม่ซ้ำเก็บเอาไว้
+        var dataBook = {
+          ep: ep,
+          name: name,
+          price: price,
+          amount: 1
+        }
+        todoList.store.push(dataBook)
+      }
+      if (checkStore(todoList.show, ep)) { // ถ้าใน store มี ep ซ้ำจะบวกค่าจำนวนหนังสือแต่ละ ep
+        var index_show = addAmount(todoList.show, ep)
+        todoList.show[index_show].amount += 1 // จะ +1
+      } else { // จะ push ค่าที่ไม่ซ้ำเก็บเอาไว้
+        var data_show = {
+          ep: ep,
+          name: name,
+          price: price,
+          amount: 1
+        }
+        todoList.show.push(data_show)
+      }
+      var amount = []
+      for (var i = 0; i < todoList.store.length; i++) {
+        if (typeof todoList.store[i].amount !== 'undefined') { // ถ้า amount ก็จะไม่เอาค่า
+          amount.push(todoList.store[i].amount)
+        }
+      }
+      todoList.promo = amount
       cal(todoList.promo)
     }
   })

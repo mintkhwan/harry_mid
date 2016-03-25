@@ -24,7 +24,10 @@
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 	<script src="js/simpleCart.min.js">
 	</script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<!-- Custom Theme files -->
 	<!--webfont-->
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -177,7 +180,14 @@
 									</tr>
 									<tr ng-repeat="show in todoList.show">
 										<td class="absorbing-column">{{show.name}}</td>
-										<td class="absorbing-column" align="right">{{show.amount}}</td>
+										<td class="absorbing-column" align="right">
+											<span class="glyphicon glyphicon-menu-down" aria-hidden="true" ng-click="todoList.subbutton(show, $index)"></span>
+											{{show.amount}}
+											<span class="glyphicon glyphicon-menu-up" aria-hidden="true" ng-click="todoList.addbutton(show, $index)"></span>
+										</td>
+										<!-- <td class="absorbing-column">
+
+										</td> -->
 										<td class="absorbing-column" align="right">{{show.price*show.amount}}</td>
 										<td class="absorbing-column" align="center">
 											<div class="remove">
