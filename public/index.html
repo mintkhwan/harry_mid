@@ -60,7 +60,7 @@
 										<button id="b1" class="button item_add" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)"></button>
 										<!-- <a href="" class="button item_add" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)"></a> -->
 										<!-- <div id="b1" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)">
-											
+
 										</div> -->
 									</div>
 								</div>
@@ -199,8 +199,11 @@
 										</td>
 									</tr>
 								</table>
-							<div align="right" id="mint">Price : {{todoList.bill() * 100}}฿</div>
-							Discount : <div align="right" id="mint2">{{todoList.discount}}</div>
+							<div align="right" id="mint">Price : <br>{{todoList.bill() * 100}}฿</div><br>
+							<div align="right">
+								Discount : <div id="mint2">{{todoList.discount}}</div>
+							</div>
+							<hr>
 							<div align="right" id="mint4"><b><u>Total : {{(todoList.bill() * 100) - todoList.discount}}฿</u></b></div>
 						</div>
 						<div ng-show="todoList.page!==true">
