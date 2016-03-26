@@ -5,7 +5,7 @@ angular.module('todoApp', [])
     todoList.mint = 'Select Book'
     todoList.store = []
     todoList.promo = []
-    todoList.discount = 0
+    todoList.discountTotal = 0
     todoList.page = false
     todoList.show = []
     todoList.addBook = function (ep, name, price) {
@@ -41,7 +41,11 @@ angular.module('todoApp', [])
         }
       }
       todoList.promo = amount
-      cal(todoList.promo)
+      // cal(todoList.promo)
+      var book = todoList.store
+      todoList.discountTotal = todoList.discount(book)
+      // console.log(todoList.discountTotal)
+      console.log(book)
     }
     todoList.bill = function () {
       var total = 0
@@ -50,39 +54,39 @@ angular.module('todoApp', [])
       }
       return total
     }
-    function cal (data) {
-      var countbook = 0 // ตัวนับจน.หนังสือ
-      todoList.discount = 0 // ส่วนลด
-      var max
-      for (var i = 0; i <= data.length; i++) { // วน col [A,B,C]
-        for (var j = 0; j < data.length; j++) { // วน row [A,B,C] เพื่อเก็บ count ไว้ check
-          if (data[j] > 0) {
-            countbook++
-            if (max < countbook) {
-              max = countbook
-            }
-          }
-        }
-        if (countbook === 2) { // คิดส่วนลด
-          todoList.discount += 20
-        } else if (countbook === 3) {
-          todoList.discount += 60
-        } else if (countbook === 4) {
-          todoList.discount += 120
-        } else if (countbook === 5) {
-          todoList.discount += 200
-        } else if (countbook === 6) {
-          todoList.discount += 300
-        } else if (countbook === 7) {
-          todoList.discount += 420
-        }
-        for (var k = 0; k < data.length; k++) {
-          data[k] -= 1
-        }
-        countbook = 0
-      }
-      console.log('todoList.discount ' + todoList.discount)
-    }
+    // function cal (data) {
+    //   var countbook = 0 // ตัวนับจน.หนังสือ
+    //   todoList.discount = 0 // ส่วนลด
+    //   var max
+    //   for (var i = 0; i <= data.length; i++) { // วน col [A,B,C]
+    //     for (var j = 0; j < data.length; j++) { // วน row [A,B,C] เพื่อเก็บ count ไว้ check
+    //       if (data[j] > 0) {
+    //         countbook++
+    //         if (max < countbook) {
+    //           max = countbook
+    //         }
+    //       }
+    //     }
+    //     if (countbook === 2) { // คิดส่วนลด
+    //       todoList.discount += 20
+    //     } else if (countbook === 3) {
+    //       todoList.discount += 60
+    //     } else if (countbook === 4) {
+    //       todoList.discount += 120
+    //     } else if (countbook === 5) {
+    //       todoList.discount += 200
+    //     } else if (countbook === 6) {
+    //       todoList.discount += 300
+    //     } else if (countbook === 7) {
+    //       todoList.discount += 420
+    //     }
+    //     for (var k = 0; k < data.length; k++) {
+    //       data[k] -= 1
+    //     }
+    //     countbook = 0
+    //   }
+    //   console.log('todoList.discount ' + todoList.discount)
+    // }
     var checkStore = function (store, ep) { // จะเช็คค่าใน arr store ว่ามีหนังซื้อไหม
       for (var i = 0; i < store.length; i++) { // ใน store มีกี่ ep ที่ซ้ำกัน
         if (store[i].ep === ep) {
@@ -97,25 +101,25 @@ angular.module('todoApp', [])
         }
       }
     }
-    todoList.delBook = function (data, index) {
+      // todoList.delBook = function (data, index) {
       // var index = todoList.promo.indexOf(data)
       // console.log('ช่องที่เราต้องการจะลบ' + index)
-      todoList.promo.splice(index, 1)
-      todoList.show.splice(index, 1)
-      todoList.store.splice(index, 1)
-      if (todoList.show.length === 0) {
-        todoList.page = false
-      }
-      var amount = []
-      for (var i = 0; i < todoList.store.length; i++) {
-        if (typeof todoList.store[i].amount !== 'undefined') {
-          amount.push(todoList.store[i].amount)
-        }
-      }
-      todoList.promo = amount
+      // todoList.promo.splice(index, 1)
+      // todoList.show.splice(index, 1)
+      // todoList.store.splice(index, 1)
+      // if (todoList.show.length === 0) {
+      //   todoList.page = false
+      // }
+      // var amount = []
+      // for (var i = 0; i < todoList.store.length; i++) {
+      //   if (typeof todoList.store[i].amount !== 'undefined') {
+      //     amount.push(todoList.store[i].amount)
+      //   }
+      // }
+      // todoList.promo = amount
       // console.log('เรียงใหม่เเล้วได้ :' + todoList.promo)
-      cal(todoList.promo)
-    }
+      // cal(todoList.promo)
+      // }
     todoList.subbutton = function (show, $index) {
       // console.log('sub')
       subRepeat(show.ep, show.name, show.price)
@@ -158,7 +162,6 @@ angular.module('todoApp', [])
         }
       }
       todoList.promo = amount
-      cal(todoList.promo)
     }
     todoList.addbutton = function (show, $index) {
       addRepeat(show.ep, show.name, show.price)
@@ -196,6 +199,25 @@ angular.module('todoApp', [])
         }
       }
       todoList.promo = amount
-      cal(todoList.promo)
+      // cal(todoList.promo)
+    }
+    var filterData = function (array) {
+      return array.filter((element) => element.amount !== 0)
+    }
+    todoList.discount = function (book) {
+      var items = book.map((obj) => {
+        return { amount: obj.amount, price: obj.price }
+      })
+      var totalDis = 0
+      while (items.length > 1) {
+        var sumprice = items.reduce((sum, item) => sum + item.price, 0)
+        totalDis += ((items.length - 1) / 10) * sumprice
+        items = items.map((obj) => {
+          return { amount: obj.amount - 1, price: obj.price }
+        })
+        items = filterData(items)
+      }
+      console.log(totalDis)
+      return totalDis
     }
   })

@@ -177,34 +177,34 @@
 										<th class="absorbing-column">Book Name</th>
 										<th class="absorbing-column">Amount</th>
 										<th class="absorbing-column">Price(฿)</th>
-										<th class="absorbing-column">Delete</th>
+										<!-- <th class="absorbing-column">Delete</th> -->
 									</tr>
 									<tr ng-repeat="show in todoList.show">
 										<td class="absorbing-column">{{show.name}}</td>
 										<td class="absorbing-column" align="right">
-											<span class="glyphicon glyphicon-menu-down" aria-hidden="true" ng-click="todoList.subbutton(show, $index)"></span>
+											<!-- <span class="glyphicon glyphicon-menu-down" aria-hidden="true" ng-click="todoList.subbutton(show, $index)"></span> -->
 											{{show.amount}}
-											<span class="glyphicon glyphicon-menu-up" aria-hidden="true" ng-click="todoList.addbutton(show, $index)"></span>
+											<!-- <span class="glyphicon glyphicon-menu-up" aria-hidden="true" ng-click="todoList.addbutton(show, $index)"></span> -->
 										</td>
 										<!-- <td class="absorbing-column">
 
 										</td> -->
 										<td class="absorbing-column" align="right">{{show.price*show.amount}}</td>
-										<td class="absorbing-column" align="center">
+										<!-- <td class="absorbing-column" align="center">
 											<div class="remove">
 												<div class="center">
 													<i class="fa fa-times-circle" ng-click="todoList.delBook(show, $index)"></i>
 												</div>
 											</div>
-										</td>
+										</td> -->
 									</tr>
 								</table>
 							<div align="right" id="mint">Price : <br>{{todoList.bill() * 100}}฿</div><br>
 							<div align="right">
-								Discount : <div id="mint2">{{todoList.discount}}</div>
+								Discount : <div id="mint2">{{todoList.discountTotal}}</div>
 							</div>
 							<hr>
-							<div align="right" id="mint4"><b><u>Total : {{(todoList.bill() * 100) - todoList.discount}}฿</u></b></div>
+							<div align="right" id="mint4"><b><u>Total : {{(todoList.bill() * 100) - todoList.discountTotal}}฿</u></b></div>
 						</div>
 						<div ng-show="todoList.page!==true">
 							กด&nbsp;&nbsp;&nbsp;<img src="images/plus.png" width="15" />เพื่อเพิ่มหนังสือที่คุณต้องการซื้อค่ะ
