@@ -13,11 +13,11 @@ $ git clone https://github.com/mintkhwan/harry_mid.git
 ```
 $ sudo npm install
 ```
-### To run Node.js server:
+### To run Node.js server
 ```
 $ sudo npm start
 ```
-### To run the nightmarejs, mocha and chai test:
+### To run the nightmarejs, mocha and chai test
 ```
 $ sudo npm test
 ```
