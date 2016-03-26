@@ -26,8 +26,8 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 2 เล่ม, ห้องแห่งความลับ จำนวน 1 เล่ม >> ส่วนลด=20 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
-        .wait(1000)
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
+        .wait(3000)
         .click('#b1')
         .click('#b1')
         .click('#b2')
@@ -39,7 +39,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ห้องแห่งความลับ จำนวน 3 เล่ม, ถ้วยอัคนี จำนวน 3 เล่ม >> ส่วนลด=60 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -55,7 +55,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 1 เล่ม, ห้องแห่งความลับ จำนวน 1 เล่ม, ถ้วยอัคนี จำนวน 1 เล่ม >> ส่วนลด=60 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b2')
@@ -68,7 +68,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 10 เล่ม >> ส่วนลด=0 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -88,7 +88,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 2 เล่ม >> ส่วนลด=0 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -100,7 +100,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 2 เล่ม, ห้องแห่งความลับ จำนวน 2 เล่ม >> ส่วนลด=40 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -114,7 +114,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 1 เล่ม, ห้องแห่งความลับ จำนวน 2 เล่ม, อัซคาบัน จำนวน 3 เล่ม >> ส่วนลด=80 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b2')
@@ -130,7 +130,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 2 เล่ม, ห้องแห่งความลับ จำนวน 2 เล่ม, อัซคาบัน จำนวน 2 เล่ม >> ส่วนลด=120 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -146,7 +146,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 3 เล่ม, ห้องแห่งความลับ จำนวน 3 เล่ม, อัซคาบัน จำนวน 2 เล่ม >> ส่วนลด=140 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -164,7 +164,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 4 เล่ม, ห้องแห่งความลับ จำนวน 3 เล่ม, อัซคาบัน จำนวน 3 เล่ม >> ส่วนลด=180 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -184,7 +184,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 4 เล่ม, ห้องแห่งความลับ จำนวน 4 เล่ม, อัซคาบัน จำนวน 3 เล่ม >> ส่วนลด=200 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -205,7 +205,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 4 เล่ม, ห้องแห่งความลับ จำนวน 4 เล่ม, อัซคาบัน จำนวน 2 เล่ม , ถ้วยอัคนี จำนวน 1 เล่ม >> ส่วนลด=220 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -226,7 +226,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 4 เล่ม, ห้องแห่งความลับ จำนวน 4 เล่ม, อัซคาบัน จำนวน 4 เล่ม >> ส่วนลด=240 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -248,7 +248,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 4 เล่ม, ห้องแห่งความลับ จำนวน 4 เล่ม, อัซคาบัน จำนวน 3 เล่ม, ถ้วยอัคนี จำนวน 1 เล่ม >> ส่วนลด=260 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -270,7 +270,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 4 เล่ม, ห้องแห่งความลับ จำนวน 3 เล่ม, อัซคาบัน จำนวน 3 เล่ม, ถ้วยอัคนี จำนวน 2 เล่ม >> ส่วนลด=300 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -292,7 +292,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 4 เล่ม, ห้องแห่งความลับ จำนวน 3 เล่ม, อัซคาบัน จำนวน 3 เล่ม, ถ้วยอัคนี จำนวน 3 เล่ม >> ส่วนลด=360 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -315,7 +315,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์ จำนวน 4 เล่ม, ห้องแห่งความลับ จำนวน 4 เล่ม, อัซคาบัน จำนวน 3 เล่ม, ถ้วยอัคนี จำนวน 3 เล่ม >> ส่วนลด=380 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b1')
@@ -339,7 +339,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์, ห้องแห่งความลับ, อัซคาบัน, ถ้วยอัคนี, นกฟีนิกซ์, เจ้าชายเลือดผสม, เครื่องรางยมทูต ภาคละ 1 เล่ม >> ส่วนลด=420 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b2')
@@ -356,7 +356,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์, ห้องแห่งความลับ, อัซคาบัน, ถ้วยอัคนี, นกฟีนิกซ์, เจ้าชายเลือดผสม, เครื่องรางยมทูต ภาคละ 2 เล่ม >> ส่วนลด=840 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b2')
@@ -380,7 +380,7 @@ describe('***BanNaiJinBookStore***', function () {
     })
     it('ศิลาอาถรรพ์, ห้องแห่งความลับ, อัซคาบัน, ถ้วยอัคนี, นกฟีนิกซ์, เจ้าชายเลือดผสม, เครื่องรางยมทูต ภาคละ 3 เล่ม >> ส่วนลด=1260 บาท', function * () {
       var case1 = yield nightmare
-        .goto('http://localhost:5000')
+        .goto('https://infinite-eyrie-68550.herokuapp.com/')
         .wait(1000)
         .click('#b1')
         .click('#b2')
