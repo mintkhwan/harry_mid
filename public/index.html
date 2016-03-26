@@ -177,7 +177,7 @@
 										<th class="absorbing-column">Book Name</th>
 										<th class="absorbing-column">Amount</th>
 										<th class="absorbing-column">Price(฿)</th>
-										<!-- <th class="absorbing-column">Delete</th> -->
+										<th class="absorbing-column">Delete</th>
 									</tr>
 									<tr ng-repeat="show in todoList.show">
 										<td class="absorbing-column">{{show.name}}</td>
@@ -190,13 +190,13 @@
 
 										</td> -->
 										<td class="absorbing-column" align="right">{{show.price*show.amount}}</td>
-										<!-- <td class="absorbing-column" align="center">
+										<td class="absorbing-column" align="center">
 											<div class="remove">
 												<div class="center">
 													<i class="fa fa-times-circle" ng-click="todoList.delBook(show, $index)"></i>
 												</div>
 											</div>
-										</td> -->
+										</td>
 									</tr>
 								</table>
 							<div align="right" id="mint">Price : <br>{{todoList.bill() * 100}}฿</div><br>
