@@ -1,4 +1,10 @@
-#BANNAIJINBOOK-Promotion Harry Potter
+#BANNAIJINBOOK (Promotion Harry Potter) 
+##heroku server
+[heroku server here](https://infinite-eyrie-68550.herokuapp.com "BANNAIJINBOOK")
+##clone repository
+```
+$ git clone https://github.com/mintkhwan/harry_mid.git
+```
 ##To install packages
 ```
 sudo npm install
@@ -7,7 +13,7 @@ sudo npm install
 ```
 sudo npm start
 ```
-##To run the nightmarejs, mocha and chai
+##To run the nightmarejs, mocha and chai test
 ```
 sudo npm test
 ```
