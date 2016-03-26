@@ -309,11 +309,6 @@ body a {
   font-size: 1.2em;
 }
 
-/* Bounce To Right */
-
-
-/* Shutter Out Horizontal */
-
 .hvr-shutter-out-horizontal {
   display: inline-block;
   vertical-align: middle;
@@ -412,10 +407,36 @@ h2.m_3 {
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
 }
+.shop-holder .product-img button:last-child {
+  position: absolute;
+  bottom: -22px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  background: url(../images/plus.png) no-repeat 8px 8px #F54D5B;
+  color: #fff;
+  text-align: center;
+  line-height: 33px;
+  border: 4px solid #fff;
+  font-size: 11px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top-right-radius: 50%;
+  /* border-bottom-right-radius: 50%; */
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.shop-holder .product-img button {
+  display: block;
+  overflow: hidden;
+}
 .shop-holder .product-img a {
   display: block;
   overflow: hidden;
 }
+
 .shop-holder .product-img {
   position: relative;
 }

@@ -31,11 +31,6 @@
 	<!--webfont-->
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$(".megamenu").megamenu();
-		});
-	</script>
 </head>
 
 <body ng-controller="TodoListController as todoList">
@@ -62,7 +57,11 @@
 								<div class="shop-holder">
 									<div class="product-img">
 										<img width="225" height="265" src="images/h1.jpg" class="img-responsive" alt="item4">
-										<a href="" class="button item_add" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)"></a>
+										<button id="b1" class="button item_add" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)"></button>
+										<!-- <a href="" class="button item_add" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)"></a> -->
+										<!-- <div id="b1" ng-click="todoList.addBook(1, 'แฮร์รี่กับศิลาอาถรรพ์', 100.00)">
+											
+										</div> -->
 									</div>
 								</div>
 								<div class="shop-content" style="height: 80px;">
@@ -76,7 +75,8 @@
 								<div class="shop-holder">
 									<div class="product-img">
 										<img width="225" height="265" src="images/h2.jpg" class="img-responsive" alt="item4">
-										<a href="" class="button item_add" ng-click="todoList.addBook(2, 'แฮร์รี่กับห้องแห่งความลับ', 100.00)"></a>
+										<button id="b2" class="button item_add" ng-click="todoList.addBook(2, 'แฮร์รี่กับห้องแห่งความลับ', 100.00)"></button>
+											<!-- <a href="" class="button item_add" ng-click="todoList.addBook(2, 'แฮร์รี่กับห้องแห่งความลับ', 100.00)"></a> -->
 									</div>
 								</div>
 								<div class="shop-content" style="height: 80px;">
@@ -90,7 +90,8 @@
 								<div class="shop-holder">
 									<div class="product-img">
 										<img width="225" height="265" src="images/h3.jpg" class="img-responsive" alt="item4">
-										<a href="" class="button item_add" ng-click="todoList.addBook(3, 'แฮร์รี่กับนักโทษแห่งอัซคาบัน', 100.00)"></a>
+										<button id="b3" class="button item_add" ng-click="todoList.addBook(3, 'แฮร์รี่กับนักโทษแห่งอัซคาบัน', 100.00)"></button>
+										<!-- <a href="" class="button item_add" ng-click="todoList.addBook(3, 'แฮร์รี่กับนักโทษแห่งอัซคาบัน', 100.00)"></a> -->
 									</div>
 								</div>
 								<div class="shop-content" style="height: 80px;">
@@ -104,7 +105,8 @@
 								<div class="shop-holder">
 									<div class="product-img">
 										<img width="225" height="265" src="images/h4.jpg" class="img-responsive" alt="item4">
-										<a href="" class="button item_add" ng-click="todoList.addBook(4, 'แฮร์รี่กับถ้วยอัคนี', 100.00)"></a>
+										<button id="b4" class="button item_add" ng-click="todoList.addBook(4, 'แฮร์รี่กับถ้วยอัคนี', 100.00)"></button>
+										<!-- <a href="" class="button item_add" ng-click="todoList.addBook(4, 'แฮร์รี่กับถ้วยอัคนี', 100.00)"></a> -->
 									</div>
 								</div>
 								<div class="shop-content" style="height: 80px;">
@@ -120,7 +122,8 @@
 								<div class="shop-holder">
 									<div class="product-img">
 										<img width="225" height="265" src="images/h5.jpg" class="img-responsive" alt="item4">
-										<a href="" class="button item_add" ng-click="todoList.addBook(5, 'แฮร์รี่กับภาคีนกฟีนิกซ์', 100.00)"></a>
+										<button id="b5" class="button item_add" ng-click="todoList.addBook(5, 'แฮร์รี่กับภาคีนกฟีนิกซ์', 100.00)"></button>
+										<!-- <a href="" class="button item_add" ng-click="todoList.addBook(5, 'แฮร์รี่กับภาคีนกฟีนิกซ์', 100.00)"></a> -->
 									</div>
 								</div>
 								<div class="shop-content" style="height: 80px;">
@@ -134,7 +137,8 @@
 								<div class="shop-holder">
 									<div class="product-img">
 										<img width="225" height="265" src="images/h6.jpg" class="img-responsive" alt="item4">
-										<a href="" class="button item_add" ng-click="todoList.addBook(6, 'แฮร์รี่กับเจ้าชายเลือดผสม', 100.00)"></a>
+										<button id="b6" class="button item_add" ng-click="todoList.addBook(6, 'แฮร์รี่กับเจ้าชายเลือดผสม', 100.00)"></button>
+										<!-- <a href="" class="button item_add" ng-click="todoList.addBook(6, 'แฮร์รี่กับเจ้าชายเลือดผสม', 100.00)"></a> -->
 									</div>
 								</div>
 								<div class="shop-content" style="height: 80px;">
@@ -148,7 +152,8 @@
 								<div class="shop-holder">
 									<div class="product-img">
 										<img width="225" height="265" src="images/h7.jpg" class="img-responsive" alt="item4">
-										<a href="" class="button item_add" ng-click="todoList.addBook(7, 'แฮร์รี่กับเครื่องรางยมทูต', 100.00)"></a>
+										<button id="b7" class="button item_add" ng-click="todoList.addBook(7, 'แฮร์รี่กับเครื่องรางยมทูต', 100.00)"></button>
+										<!-- <a href="" class="button item_add" ng-click="todoList.addBook(7, 'แฮร์รี่กับเครื่องรางยมทูต', 100.00)"></a> -->
 									</div>
 								</div>
 								<div class="shop-content" style="height: 80px;">
@@ -194,9 +199,9 @@
 										</td>
 									</tr>
 								</table>
-							<div align="right" class="mint2">Price : {{todoList.bill() * 100}}฿</div>
-							<div align="right" class="mint2">Discount : {{todoList.discount}}฿</div>
-							<div align="right" class="mint4"><b><u>Total : {{(todoList.bill() * 100) - todoList.discount}}฿</u></b></div>
+							<div align="right" id="mint">Price : {{todoList.bill() * 100}}฿</div>
+							Discount : <div align="right" id="mint2">{{todoList.discount}}</div>
+							<div align="right" id="mint4"><b><u>Total : {{(todoList.bill() * 100) - todoList.discount}}฿</u></b></div>
 						</div>
 						<div ng-show="todoList.page!==true">
 							กด&nbsp;&nbsp;&nbsp;<img src="images/plus.png" width="15" />เพื่อเพิ่มหนังสือที่คุณต้องการซื้อค่ะ
