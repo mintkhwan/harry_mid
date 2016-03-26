@@ -1,6 +1,5 @@
 # BANNAIJINBOOK
 Promotion Harry Potter Book
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ##heroku server
 [heroku server is here](https://infinite-eyrie-68550.herokuapp.com "BANNAIJINBOOK")
