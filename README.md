@@ -7,7 +7,7 @@ Promotion Harry Potter Book
 ## Usage
 ### clone repository
 ```
-$ git clone https://github.com/mintkhwan/harry_mid.git
+$ git clone git@github.com:mintkhwan/harry_mid.git
 ```
 ### To install packages
 ```
