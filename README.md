@@ -1,7 +1,7 @@
 # BANNAIJINBOOK
 Promotion Harry Potter Book
 
-##heroku server
+## heroku server
 [heroku server is here](https://infinite-eyrie-68550.herokuapp.com "BANNAIJINBOOK")
 
 ## Usage
