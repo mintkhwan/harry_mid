@@ -11,13 +11,13 @@ $ git clone git@github.com:mintkhwan/harry_mid.git
 ```
 ### To install packages
 ```
-$ sudo npm install
+$ npm install
 ```
 ### To run Node.js server
 ```
-$ sudo npm start
+$ npm start
 ```
 ### To run the nightmarejs, mocha and chai test
 ```
-$ sudo npm test
+$ npm test
 ```
